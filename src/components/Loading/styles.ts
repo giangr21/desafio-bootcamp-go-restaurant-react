@@ -1,10 +1,19 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-interface IFoodPlateProps {
-  available: boolean;
-}
+export const FoodsContainer = styled.div`
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 0;
+  margin-top: -140px;
 
-export const Container = styled.div<IFoodPlateProps>`
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 32px;
+`;
+
+export const Food = styled.div`
   background: ${props => props.theme.colors.backgroundCard};
   border-radius: 8px;
   transition: all 400ms;
@@ -30,12 +39,6 @@ export const Container = styled.div<IFoodPlateProps>`
     overflow: hidden;
     transition: 0.3s opacity;
     text-align: center;
-
-    ${props =>
-      !props.available &&
-      css`
-        opacity: 0.3;
-      `};
 
     img {
       pointer-events: none;

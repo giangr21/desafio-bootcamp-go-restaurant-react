@@ -9,7 +9,7 @@ export const Container = styled.div<IContainerProps>`
   display: flex;
   align-items: center;
 
-  background: #fff;
+  background: ${props => props.theme.colors.backgroundCard};
   border-radius: 8px;
   padding: 18px 24px;
   width: 100%;
